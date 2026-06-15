@@ -1,14 +1,11 @@
-# Come aggiornare alla V6
+# Come aggiornare
 
-1. Scarica questo ZIP.
-2. Estrai il file.
-3. Vai su GitHub nel repository:
-   https://github.com/pistillo43-prog/fantamantra-asta-live
-4. Apri `app.py`.
-5. Clicca sulla matita.
-6. Cancella tutto il vecchio contenuto.
-7. Incolla il contenuto del nuovo `app.py`.
-8. Fai Commit changes.
-9. Streamlit Cloud aggiornerà l'app automaticamente.
+1. Apri il repository GitHub.
+2. Apri `app.py`.
+3. Clicca sulla matita.
+4. Sostituisci tutto con il nuovo `app.py`.
+5. Fai Commit changes.
+6. Streamlit aggiornerà automaticamente l'app.
 
-Non toccare i Secrets su Streamlit.
+Correzione inclusa:
+`limit=700` nel Database giocatori.
