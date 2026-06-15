@@ -11,337 +11,408 @@ st.set_page_config(
 )
 
 # =========================
-# CSS PREMIUM UI
+# CSS V5 - FANTALAB STYLE
 # =========================
 st.markdown("""
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap');
 
-    * { font-family: 'Inter', sans-serif; }
+* { font-family: 'Inter', sans-serif; }
 
-    .stApp {
-        background:
-            radial-gradient(circle at top left, rgba(34,197,94,0.16), transparent 32%),
-            radial-gradient(circle at top right, rgba(168,85,247,0.14), transparent 34%),
-            linear-gradient(135deg, #020617 0%, #0f172a 48%, #111827 100%);
-        color: #f8fafc;
-    }
+.stApp {
+    background:
+        radial-gradient(circle at top left, rgba(34,197,94,0.16), transparent 28%),
+        radial-gradient(circle at top right, rgba(59,130,246,0.16), transparent 28%),
+        linear-gradient(135deg, #020617 0%, #0f172a 45%, #111827 100%);
+    color: #f8fafc;
+}
 
-    section[data-testid="stSidebar"] {
-        background: linear-gradient(180deg, rgba(2,6,23,0.98), rgba(15,23,42,0.98));
-        border-right: 1px solid rgba(148,163,184,0.18);
-    }
+section[data-testid="stSidebar"] {
+    background: linear-gradient(180deg, #020617 0%, #0f172a 100%);
+    border-right: 1px solid rgba(148,163,184,0.18);
+}
 
-    h1, h2, h3 {
-        color: #f8fafc !important;
-        font-weight: 900 !important;
-        letter-spacing: -0.03em;
-    }
+h1, h2, h3 {
+    color: #f8fafc !important;
+    font-weight: 900 !important;
+    letter-spacing: -0.03em;
+}
 
-    p, label, span, div { color: #e5e7eb; }
+p, label {
+    color: #e5e7eb !important;
+}
 
-    .hero-card {
-        background: linear-gradient(135deg, rgba(15,23,42,0.92), rgba(30,41,59,0.75));
-        border: 1px solid rgba(148,163,184,0.20);
-        border-radius: 24px;
-        padding: 26px 28px;
-        margin-bottom: 18px;
-        box-shadow: 0 18px 50px rgba(0,0,0,0.32);
-    }
+/* FIX SELECTBOX / DROPDOWN */
+div[data-baseweb="select"] > div {
+    background-color: #f8fafc !important;
+    border-radius: 12px !important;
+}
 
-    .hero-title {
-        font-size: 44px;
-        font-weight: 950;
-        color: #ffffff;
-        letter-spacing: -0.05em;
-        margin-bottom: 4px;
-    }
+div[data-baseweb="select"] span,
+div[data-baseweb="select"] div {
+    color: #111827 !important;
+}
 
-    .hero-subtitle {
-        color: #cbd5e1;
-        font-size: 15px;
-        font-weight: 600;
-    }
+div[data-baseweb="popover"] ul,
+div[data-baseweb="popover"] div {
+    background-color: #ffffff !important;
+    color: #111827 !important;
+}
 
-    .brand-box {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        padding: 18px 10px 24px 10px;
-        border-bottom: 1px solid rgba(148,163,184,0.16);
-        margin-bottom: 16px;
-    }
+div[data-baseweb="popover"] li {
+    color: #111827 !important;
+}
 
-    .brand-logo {
-        width: 48px;
-        height: 48px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 16px;
-        background: linear-gradient(135deg, #16a34a, #22c55e);
-        box-shadow: 0 0 28px rgba(34,197,94,0.35);
-        font-size: 28px;
-    }
+input {
+    color: #111827 !important;
+}
 
-    .brand-title {
-        font-size: 22px;
-        font-weight: 900;
-        color: white;
-        line-height: 1;
-    }
+textarea {
+    color: #111827 !important;
+}
 
-    .brand-subtitle {
-        font-size: 13px;
-        font-weight: 800;
-        color: #22c55e;
-        margin-top: 4px;
-        letter-spacing: 0.08em;
-    }
+/* BRAND */
+.brand-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 18px 8px 22px 8px;
+    border-bottom: 1px solid rgba(148,163,184,0.15);
+    margin-bottom: 18px;
+}
 
-    .league-box {
-        background: linear-gradient(135deg, rgba(34,197,94,0.12), rgba(59,130,246,0.10));
-        border: 1px solid rgba(34,197,94,0.25);
-        border-radius: 18px;
-        padding: 16px;
-        margin: 8px 0 18px 0;
-    }
+.brand-logo {
+    width: 52px;
+    height: 52px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, #16a34a, #22c55e);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    box-shadow: 0 0 30px rgba(34,197,94,0.35);
+}
 
-    .league-small {
-        color: #94a3b8;
-        font-size: 11px;
-        font-weight: 800;
-        letter-spacing: 0.14em;
-    }
+.brand-title {
+    font-size: 23px;
+    font-weight: 950;
+    color: white;
+    line-height: 1;
+}
 
-    .league-name {
-        color: #22c55e;
-        font-size: 22px;
-        font-weight: 900;
-        margin-top: 4px;
-    }
+.brand-subtitle {
+    color: #22c55e;
+    font-weight: 900;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    margin-top: 5px;
+}
 
-    .league-code {
-        color: #cbd5e1;
-        font-size: 13px;
-        margin-top: 4px;
-    }
+.league-box {
+    background: linear-gradient(135deg, rgba(34,197,94,0.12), rgba(59,130,246,0.10));
+    border: 1px solid rgba(34,197,94,0.28);
+    border-radius: 20px;
+    padding: 16px;
+    margin-bottom: 18px;
+}
 
-    .premium-stat-card {
-        display: flex;
-        align-items: center;
-        gap: 16px;
-        min-height: 105px;
-        padding: 18px;
-        background: linear-gradient(135deg, rgba(15,23,42,0.86), rgba(30,41,59,0.62));
-        border: 1px solid rgba(148,163,184,0.20);
-        border-radius: 20px;
-        box-shadow: 0 14px 35px rgba(0,0,0,0.22);
-    }
+.league-small {
+    color: #94a3b8;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 0.12em;
+}
 
-    .stat-icon {
-        font-size: 38px;
-        filter: drop-shadow(0 0 15px rgba(34,197,94,0.25));
-    }
+.league-name {
+    color: #22c55e;
+    font-size: 22px;
+    font-weight: 950;
+    margin-top: 4px;
+}
 
-    .stat-title {
-        color: #94a3b8;
-        font-size: 12px;
-        font-weight: 800;
-        text-transform: uppercase;
-        letter-spacing: 0.08em;
-    }
+.league-code {
+    color: #cbd5e1;
+    font-size: 13px;
+    margin-top: 4px;
+}
 
-    .stat-value {
-        color: #fff;
-        font-size: 31px;
-        font-weight: 950;
-        line-height: 1.1;
-    }
+/* HERO */
+.hero-card {
+    background: linear-gradient(135deg, rgba(15,23,42,0.94), rgba(30,41,59,0.75));
+    border: 1px solid rgba(148,163,184,0.22);
+    border-radius: 26px;
+    padding: 28px;
+    margin-bottom: 20px;
+    box-shadow: 0 22px 60px rgba(0,0,0,0.35);
+}
 
-    .stat-subtitle {
-        color: #cbd5e1;
-        font-size: 13px;
-        margin-top: 3px;
-    }
+.hero-title {
+    font-size: 46px;
+    font-weight: 950;
+    color: #ffffff;
+    letter-spacing: -0.05em;
+}
 
-    .auction-grid-card {
-        background: linear-gradient(135deg, rgba(15,23,42,0.9), rgba(17,24,39,0.76));
-        border: 1px solid rgba(148,163,184,0.22);
-        border-radius: 24px;
-        padding: 20px;
-        box-shadow: 0 18px 48px rgba(0,0,0,0.30);
-        margin-bottom: 16px;
-    }
+.hero-subtitle {
+    color: #cbd5e1;
+    font-size: 15px;
+    font-weight: 650;
+}
 
-    .section-label {
-        color: #22c55e;
-        font-size: 14px;
-        font-weight: 900;
-        letter-spacing: 0.04em;
-        text-transform: uppercase;
-        margin-bottom: 14px;
-    }
+/* CARDS */
+.card {
+    background: linear-gradient(135deg, rgba(15,23,42,0.92), rgba(17,24,39,0.78));
+    border: 1px solid rgba(148,163,184,0.20);
+    border-radius: 24px;
+    padding: 20px;
+    box-shadow: 0 18px 48px rgba(0,0,0,0.28);
+    margin-bottom: 16px;
+}
 
-    .player-name-big {
-        font-size: 36px;
-        font-weight: 950;
-        color: #fff;
-        letter-spacing: -0.04em;
-        line-height: 1;
-        margin-bottom: 8px;
-    }
+.card-green {
+    border-color: rgba(34,197,94,0.35);
+    background: linear-gradient(135deg, rgba(34,197,94,0.13), rgba(15,23,42,0.86));
+}
 
-    .player-meta {
-        color: #cbd5e1;
-        font-weight: 700;
-        margin-bottom: 10px;
-    }
+.card-blue {
+    border-color: rgba(59,130,246,0.35);
+    background: linear-gradient(135deg, rgba(59,130,246,0.13), rgba(15,23,42,0.86));
+}
 
-    .pill {
-        display: inline-block;
-        background: rgba(34,197,94,0.13);
-        color: #86efac;
-        padding: 7px 12px;
-        border-radius: 999px;
-        margin-right: 8px;
-        margin-top: 8px;
-        border: 1px solid rgba(34,197,94,0.32);
-        font-weight: 800;
-        font-size: 13px;
-    }
+.card-purple {
+    border-color: rgba(168,85,247,0.35);
+    background: linear-gradient(135deg, rgba(168,85,247,0.13), rgba(15,23,42,0.86));
+}
 
-    .pill-blue {
-        background: rgba(59,130,246,0.14);
-        color: #bfdbfe;
-        border-color: rgba(59,130,246,0.35);
-    }
+.section-label {
+    color: #22c55e;
+    font-size: 14px;
+    font-weight: 950;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 12px;
+}
 
-    .pill-yellow {
-        background: rgba(245,158,11,0.15);
-        color: #fde68a;
-        border-color: rgba(245,158,11,0.36);
-    }
+.stat-card {
+    min-height: 105px;
+    padding: 18px;
+    border-radius: 22px;
+    border: 1px solid rgba(148,163,184,0.18);
+    background: linear-gradient(135deg, rgba(15,23,42,0.88), rgba(30,41,59,0.62));
+    box-shadow: 0 14px 35px rgba(0,0,0,0.24);
+}
 
-    .price-panel {
-        background:
-            radial-gradient(circle at top, rgba(250,204,21,0.20), transparent 35%),
-            linear-gradient(135deg, rgba(15,23,42,0.96), rgba(30,41,59,0.86));
-        border: 1px solid rgba(250,204,21,0.36);
-        border-radius: 24px;
-        padding: 26px;
-        text-align: center;
-        box-shadow: 0 18px 44px rgba(250,204,21,0.10);
-    }
+.stat-title {
+    color: #94a3b8;
+    font-size: 12px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
 
-    .price-label {
-        color: #cbd5e1;
-        font-size: 12px;
-        text-transform: uppercase;
-        font-weight: 900;
-        letter-spacing: 0.08em;
-    }
+.stat-value {
+    color: #ffffff;
+    font-size: 32px;
+    font-weight: 950;
+    line-height: 1.1;
+}
 
-    .price-number {
-        color: #facc15;
-        font-size: 76px;
-        font-weight: 950;
-        line-height: 0.95;
-        text-shadow: 0 0 25px rgba(250,204,21,0.22);
-    }
+.stat-subtitle {
+    color: #cbd5e1;
+    font-size: 13px;
+}
 
-    .price-credit {
-        color: #facc15;
-        font-size: 20px;
-        font-weight: 900;
-        margin-bottom: 18px;
-    }
+/* PLAYER */
+.player-title {
+    font-size: 40px;
+    font-weight: 950;
+    color: #ffffff;
+    letter-spacing: -0.05em;
+    line-height: 1;
+    margin-bottom: 8px;
+}
 
-    .best-bidder {
-        border-top: 1px solid rgba(148,163,184,0.20);
-        padding-top: 18px;
-        margin-top: 18px;
-        font-size: 22px;
-        font-weight: 950;
-        color: #fff;
-    }
+.player-sub {
+    color: #cbd5e1;
+    font-weight: 750;
+    margin-bottom: 12px;
+}
 
-    .ranking-row {
-        display: grid;
-        grid-template-columns: 30px 1fr 70px;
-        align-items: center;
-        gap: 10px;
-        padding: 9px 0;
-        border-bottom: 1px solid rgba(148,163,184,0.10);
-    }
+.role-badge {
+    display: inline-block;
+    padding: 8px 13px;
+    border-radius: 999px;
+    background: rgba(34,197,94,0.14);
+    border: 1px solid rgba(34,197,94,0.35);
+    color: #86efac;
+    font-weight: 900;
+    margin-right: 8px;
+    margin-top: 8px;
+    font-size: 13px;
+}
 
-    .rank-num { color: #86efac; font-weight: 900; }
-    .rank-name { font-weight: 800; color: #f8fafc; }
-    .rank-credit { font-weight: 950; color: #ffffff; text-align: right; }
+.badge-blue {
+    background: rgba(59,130,246,0.14);
+    border-color: rgba(59,130,246,0.35);
+    color: #bfdbfe;
+}
 
-    .progress-line {
-        height: 4px;
-        border-radius: 99px;
-        margin-top: 5px;
-        background: linear-gradient(90deg, #22c55e, #3b82f6, #a855f7);
-    }
+.badge-yellow {
+    background: rgba(245,158,11,0.16);
+    border-color: rgba(245,158,11,0.36);
+    color: #fde68a;
+}
 
-    .purchase-row {
-        display: grid;
-        grid-template-columns: 1fr 70px;
-        gap: 8px;
-        padding: 11px 0;
-        border-bottom: 1px solid rgba(148,163,184,0.10);
-    }
+.badge-red {
+    background: rgba(239,68,68,0.16);
+    border-color: rgba(239,68,68,0.36);
+    color: #fecaca;
+}
 
-    .purchase-player { color: white; font-weight: 850; }
-    .purchase-team { color: #94a3b8; font-size: 12px; }
-    .purchase-price { color: #facc15; font-weight: 950; text-align: right; }
+.price-panel {
+    background:
+        radial-gradient(circle at top, rgba(250,204,21,0.22), transparent 38%),
+        linear-gradient(135deg, rgba(15,23,42,0.96), rgba(30,41,59,0.88));
+    border: 1px solid rgba(250,204,21,0.38);
+    border-radius: 26px;
+    padding: 28px;
+    text-align: center;
+    box-shadow: 0 18px 50px rgba(250,204,21,0.10);
+}
 
-    .scout-card {
-        background: linear-gradient(135deg, rgba(15,23,42,0.92), rgba(30,41,59,0.68));
-        border: 1px solid rgba(148,163,184,0.18);
-        border-radius: 18px;
-        padding: 16px;
-        min-height: 122px;
-        margin-bottom: 10px;
-    }
+.price-label {
+    color: #cbd5e1;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 950;
+    letter-spacing: 0.08em;
+}
 
-    .scout-name { color: white; font-size: 17px; font-weight: 900; }
-    .scout-sub { color: #94a3b8; font-size: 12px; margin-bottom: 8px; }
-    .stars { color: #facc15; letter-spacing: 2px; font-size: 15px; }
+.price-number {
+    color: #facc15;
+    font-size: 82px;
+    font-weight: 950;
+    line-height: 0.95;
+    text-shadow: 0 0 25px rgba(250,204,21,0.25);
+}
 
-    .danger-box {
-        background: rgba(239,68,68,0.15);
-        border: 1px solid rgba(239,68,68,0.45);
-        border-radius: 18px;
-        padding: 18px;
-    }
+.price-credit {
+    color: #facc15;
+    font-size: 20px;
+    font-weight: 900;
+    margin-bottom: 16px;
+}
 
-    div[data-testid="stMetric"] {
-        background: rgba(255,255,255,0.08);
-        padding: 18px;
-        border-radius: 18px;
-        border: 1px solid rgba(255,255,255,0.12);
-    }
+/* PLAYER DB CARD */
+.player-card {
+    background: linear-gradient(135deg, rgba(15,23,42,0.92), rgba(30,41,59,0.70));
+    border: 1px solid rgba(148,163,184,0.20);
+    border-radius: 22px;
+    padding: 16px;
+    margin-bottom: 12px;
+    transition: 0.18s ease;
+}
 
-    .stButton > button {
-        border-radius: 14px !important;
-        border: 1px solid rgba(148,163,184,0.25) !important;
-        font-weight: 850 !important;
-        min-height: 44px;
-    }
+.player-card:hover {
+    border-color: rgba(34,197,94,0.55);
+    transform: translateY(-2px);
+    box-shadow: 0 16px 40px rgba(34,197,94,0.10);
+}
 
-    .stButton > button[kind="primary"] {
-        background: linear-gradient(135deg, #16a34a, #22c55e) !important;
-        color: white !important;
-        border: 1px solid rgba(34,197,94,0.5) !important;
-    }
+.player-card-name {
+    color: white;
+    font-size: 19px;
+    font-weight: 950;
+}
+
+.player-card-sub {
+    color: #94a3b8;
+    font-size: 13px;
+    margin-top: 3px;
+}
+
+.mini-stat-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.mini-stat {
+    border-radius: 14px;
+    padding: 10px;
+    background: rgba(15,23,42,0.65);
+    border: 1px solid rgba(148,163,184,0.14);
+    text-align: center;
+}
+
+.mini-label {
+    color: #94a3b8;
+    font-size: 11px;
+    font-weight: 850;
+}
+
+.mini-value {
+    color: white;
+    font-size: 18px;
+    font-weight: 950;
+}
+
+/* RANK */
+.ranking-row {
+    display: grid;
+    grid-template-columns: 30px 1fr 70px;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 0;
+    border-bottom: 1px solid rgba(148,163,184,0.10);
+}
+
+.rank-num { color: #86efac; font-weight: 950; }
+.rank-name { font-weight: 850; color: #f8fafc; }
+.rank-credit { font-weight: 950; color: #ffffff; text-align: right; }
+
+.progress-line {
+    height: 4px;
+    border-radius: 99px;
+    margin-top: 5px;
+    background: linear-gradient(90deg, #22c55e, #3b82f6, #a855f7);
+}
+
+.purchase-row {
+    display: grid;
+    grid-template-columns: 1fr 75px;
+    gap: 8px;
+    padding: 11px 0;
+    border-bottom: 1px solid rgba(148,163,184,0.10);
+}
+
+.purchase-player { color: white; font-weight: 900; }
+.purchase-team { color: #94a3b8; font-size: 12px; }
+.purchase-price { color: #facc15; font-weight: 950; text-align: right; }
+
+.stButton > button {
+    border-radius: 14px !important;
+    border: 1px solid rgba(148,163,184,0.25) !important;
+    font-weight: 850 !important;
+    min-height: 44px;
+}
+
+.stButton > button[kind="primary"] {
+    background: linear-gradient(135deg, #16a34a, #22c55e) !important;
+    color: white !important;
+    border: 1px solid rgba(34,197,94,0.5) !important;
+}
+
+div[data-testid="stDataFrame"] {
+    border-radius: 18px !important;
+    overflow: hidden !important;
+}
 </style>
 """, unsafe_allow_html=True)
 
 # =========================
-# CONFIG SUPABASE
+# SUPABASE
 # =========================
 try:
     SUPABASE_URL = st.secrets.get("SUPABASE_URL", "")
@@ -350,37 +421,48 @@ except Exception:
     SUPABASE_URL = ""
     SUPABASE_KEY = ""
 
-st.sidebar.title("⚙️ Connessione")
-
 if not SUPABASE_URL:
-    SUPABASE_URL = st.sidebar.text_input("Supabase URL", type="default")
-
+    SUPABASE_URL = st.sidebar.text_input("Supabase URL")
 if not SUPABASE_KEY:
     SUPABASE_KEY = st.sidebar.text_input("Supabase anon key", type="password")
 
 if not SUPABASE_URL or not SUPABASE_KEY:
-    st.warning("Inserisci Supabase URL e Supabase anon key nella sidebar.")
+    st.warning("Inserisci Supabase URL e Supabase anon key.")
     st.stop()
 
 supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 
 # =========================
-# FUNZIONI DATABASE
+# DB FUNCTIONS
 # =========================
 def get_lega_by_codice(codice):
     res = supabase.table("leghe").select("*").eq("codice_invito", codice).execute()
     return res.data[0] if res.data else None
 
 def get_partecipanti(lega_id):
-    res = supabase.table("partecipanti").select("*").eq("lega_id", lega_id).order("nome_squadra").execute()
-    return res.data
+    return supabase.table("partecipanti").select("*").eq("lega_id", lega_id).order("nome_squadra").execute().data
 
 def get_giocatori(query="", limit=100):
     q = supabase.table("giocatori").select("*").limit(limit)
     if query:
         q = q.ilike("nome", f"%{query}%")
-    res = q.execute()
-    return res.data
+    return q.execute().data
+
+def get_giocatori_filtrati(query="", ruolo="", squadra="", limit=150):
+    q = supabase.table("giocatori").select("*").limit(limit)
+    if query:
+        q = q.ilike("nome", f"%{query}%")
+    if squadra and squadra != "Tutte":
+        q = q.eq("squadra", squadra)
+    data = q.execute().data
+    if ruolo and ruolo != "Tutti":
+        data = [g for g in data if ruolo.lower() in str(g.get("ruoli_mantra", "")).lower()]
+    return data
+
+def get_squadre():
+    data = supabase.table("giocatori").select("squadra").execute().data
+    squadre = sorted({d.get("squadra") for d in data if d.get("squadra")})
+    return ["Tutte"] + squadre
 
 def get_giocatore(id_giocatore):
     res = supabase.table("giocatori").select("*").eq("id_giocatore", id_giocatore).execute()
@@ -399,7 +481,7 @@ def get_asta_attiva(lega_id):
     return res.data[0] if res.data else None
 
 def crea_asta(lega_id, id_giocatore, prezzo_base=1):
-    dati = {
+    return supabase.table("asta_live").insert({
         "lega_id": lega_id,
         "id_giocatore": id_giocatore,
         "prezzo_corrente": prezzo_base,
@@ -407,25 +489,19 @@ def crea_asta(lega_id, id_giocatore, prezzo_base=1):
         "stato": "in_corso",
         "timer_fine": (datetime.utcnow() + timedelta(seconds=30)).isoformat(),
         "updated_at": datetime.utcnow().isoformat()
-    }
-    res = supabase.table("asta_live").insert(dati).execute()
-    return res.data[0]
+    }).execute().data[0]
 
 def rilancia(asta, partecipante_id, importo):
-    asta_id = asta["id"]
-    lega_id = asta["lega_id"]
-    id_giocatore = asta["id_giocatore"]
-
     partecipante = supabase.table("partecipanti").select("*").eq("id", partecipante_id).execute().data[0]
     if float(partecipante["crediti_residui"]) < float(importo):
         st.error("Crediti insufficienti.")
         return
 
     supabase.table("rilanci").insert({
-        "lega_id": lega_id,
-        "asta_id": asta_id,
+        "lega_id": asta["lega_id"],
+        "asta_id": asta["id"],
         "partecipante_id": partecipante_id,
-        "id_giocatore": id_giocatore,
+        "id_giocatore": asta["id_giocatore"],
         "importo": importo
     }).execute()
 
@@ -434,21 +510,15 @@ def rilancia(asta, partecipante_id, importo):
         "partecipante_corrente": partecipante_id,
         "timer_fine": (datetime.utcnow() + timedelta(seconds=20)).isoformat(),
         "updated_at": datetime.utcnow().isoformat()
-    }).eq("id", asta_id).execute()
+    }).eq("id", asta["id"]).execute()
 
 def giocatore_gia_acquistato(lega_id, id_giocatore):
-    res = (
-        supabase.table("rose")
-        .select("*")
-        .eq("lega_id", lega_id)
-        .eq("id_giocatore", id_giocatore)
-        .execute()
-    )
+    res = supabase.table("rose").select("*").eq("lega_id", lega_id).eq("id_giocatore", id_giocatore).execute()
     return len(res.data) > 0
 
 def assegna_giocatore(asta):
     if not asta.get("partecipante_corrente"):
-        st.error("Nessuna offerta presente. Non puoi assegnare il giocatore.")
+        st.error("Nessuna offerta presente.")
         return
 
     lega_id = asta["lega_id"]
@@ -457,12 +527,11 @@ def assegna_giocatore(asta):
     prezzo = float(asta["prezzo_corrente"])
 
     if giocatore_gia_acquistato(lega_id, id_giocatore):
-        st.error("Questo giocatore è già stato acquistato.")
+        st.error("Giocatore già acquistato.")
         return
 
     giocatore = get_giocatore(id_giocatore)
     partecipante = supabase.table("partecipanti").select("*").eq("id", partecipante_id).execute().data[0]
-
     nuovi_crediti = float(partecipante["crediti_residui"]) - prezzo
 
     if nuovi_crediti < 0:
@@ -479,72 +548,46 @@ def assegna_giocatore(asta):
         "ruoli_mantra": giocatore.get("ruoli_mantra")
     }).execute()
 
-    supabase.table("partecipanti").update({
-        "crediti_residui": nuovi_crediti
-    }).eq("id", partecipante_id).execute()
-
-    supabase.table("asta_live").update({
-        "stato": "chiusa",
-        "updated_at": datetime.utcnow().isoformat()
-    }).eq("id", asta["id"]).execute()
-
-    st.success(f"{giocatore.get('nome')} assegnato a {partecipante.get('nome_squadra')} per {prezzo} crediti.")
+    supabase.table("partecipanti").update({"crediti_residui": nuovi_crediti}).eq("id", partecipante_id).execute()
+    supabase.table("asta_live").update({"stato": "chiusa", "updated_at": datetime.utcnow().isoformat()}).eq("id", asta["id"]).execute()
 
 def annulla_asta(asta):
-    supabase.table("asta_live").update({
-        "stato": "annullata",
-        "updated_at": datetime.utcnow().isoformat()
-    }).eq("id", asta["id"]).execute()
+    supabase.table("asta_live").update({"stato": "annullata", "updated_at": datetime.utcnow().isoformat()}).eq("id", asta["id"]).execute()
 
 def get_rosa(lega_id):
-    res = (
-        supabase.table("rose")
-        .select("*")
-        .eq("lega_id", lega_id)
-        .order("created_at", desc=False)
-        .execute()
-    )
-    return res.data
+    return supabase.table("rose").select("*").eq("lega_id", lega_id).order("created_at").execute().data
 
 def get_ultimi_acquisti(lega_id, limit=5):
-    res = (
+    return (
         supabase.table("rose")
         .select("*, partecipanti(nome_squadra, nome_presidente)")
         .eq("lega_id", lega_id)
         .order("created_at", desc=True)
         .limit(limit)
         .execute()
+        .data
     )
-    return res.data
 
 def get_rilanci(asta_id):
-    res = (
+    return (
         supabase.table("rilanci")
         .select("*, partecipanti(nome_squadra, nome_presidente)")
         .eq("asta_id", asta_id)
         .order("created_at", desc=True)
         .limit(20)
         .execute()
+        .data
     )
-    return res.data
 
 def reset_lega_totale(lega_id, budget=600):
     supabase.table("rilanci").delete().eq("lega_id", lega_id).execute()
     supabase.table("rose").delete().eq("lega_id", lega_id).execute()
     supabase.table("asta_live").delete().eq("lega_id", lega_id).execute()
     supabase.table("offerte").delete().eq("lega_id", lega_id).execute()
-    supabase.table("partecipanti").update({
-        "crediti_residui": budget
-    }).eq("lega_id", lega_id).execute()
+    supabase.table("partecipanti").update({"crediti_residui": budget}).eq("lega_id", lega_id).execute()
 
 def get_commento_giocatore(lega_id, id_giocatore):
-    res = (
-        supabase.table("commenti_giocatori")
-        .select("*")
-        .eq("lega_id", lega_id)
-        .eq("id_giocatore", id_giocatore)
-        .execute()
-    )
+    res = supabase.table("commenti_giocatori").select("*").eq("lega_id", lega_id).eq("id_giocatore", id_giocatore).execute()
     return res.data[0] if res.data else None
 
 def salva_commento_giocatore(lega_id, id_giocatore, commento, fascia, priorita, prezzo_massimo, voto_personale):
@@ -558,26 +601,24 @@ def salva_commento_giocatore(lega_id, id_giocatore, commento, fascia, priorita, 
         "voto_personale": voto_personale,
         "updated_at": datetime.utcnow().isoformat()
     }
-
     esistente = get_commento_giocatore(lega_id, id_giocatore)
-
     if esistente:
         supabase.table("commenti_giocatori").update(dati).eq("id", esistente["id"]).execute()
     else:
         supabase.table("commenti_giocatori").insert(dati).execute()
 
 def get_tutti_commenti(lega_id):
-    res = (
+    return (
         supabase.table("commenti_giocatori")
-        .select("*, giocatori(nome, squadra, ruoli_mantra, fanta_media, quotazione_attuale, quotazione_attuale_mantra)")
+        .select("*, giocatori(nome, squadra, ruoli_mantra, fanta_media, media_voto, quotazione_attuale, quotazione_attuale_mantra)")
         .eq("lega_id", lega_id)
         .order("updated_at", desc=True)
         .execute()
+        .data
     )
-    return res.data
 
 # =========================
-# FUNZIONI UI
+# UI FUNCTIONS
 # =========================
 def safe_num(value, default=0):
     try:
@@ -587,21 +628,16 @@ def safe_num(value, default=0):
     except Exception:
         return default
 
-def render_stat_card(title, value, subtitle="", icon="📊", color="#22c55e"):
+def stat_card(title, value, subtitle="", color_class=""):
     st.markdown(f"""
-    <div class="premium-stat-card">
-        <div class="stat-icon" style="color:{color};">{icon}</div>
-        <div>
-            <div class="stat-title">{title}</div>
-            <div class="stat-value">{value}</div>
-            <div class="stat-subtitle">{subtitle}</div>
-        </div>
+    <div class="stat-card {color_class}">
+        <div class="stat-title">{title}</div>
+        <div class="stat-value">{value}</div>
+        <div class="stat-subtitle">{subtitle}</div>
     </div>
     """, unsafe_allow_html=True)
 
-def render_sidebar_brand(lega=None):
-    codice = lega.get("codice_invito") if lega else "-"
-    nome = lega.get("nome") if lega else "FantaMantra"
+def sidebar_brand(lega):
     st.sidebar.markdown(f"""
     <div class="brand-box">
         <div class="brand-logo">⚽</div>
@@ -612,87 +648,108 @@ def render_sidebar_brand(lega=None):
     </div>
     <div class="league-box">
         <div class="league-small">LEGA</div>
-        <div class="league-name">{nome}</div>
-        <div class="league-code">Codice: {codice}</div>
+        <div class="league-name">{lega.get("nome")}</div>
+        <div class="league-code">Codice: {lega.get("codice_invito")}</div>
+    </div>
+    """, unsafe_allow_html=True)
+
+def player_header(g, commento=None):
+    fascia = commento.get("fascia") if commento else "Da valutare"
+    prezzo = commento.get("prezzo_massimo") if commento else "-"
+    st.markdown(f"""
+    <div class="card card-green">
+        <div class="player-title">{g.get("nome")}</div>
+        <div class="player-sub">🏟️ {g.get("squadra")} · 🎯 {g.get("ruoli_mantra")} · Ruolo classico: {g.get("ruolo_classico", "-")}</div>
+        <span class="role-badge">MV {g.get("media_voto")}</span>
+        <span class="role-badge">FM {g.get("fanta_media")}</span>
+        <span class="role-badge badge-blue">Gol {g.get("gol_fatti")}</span>
+        <span class="role-badge badge-blue">Assist {g.get("assist")}</span>
+        <span class="role-badge badge-yellow">Q {g.get("quotazione_attuale")}</span>
+        <span class="role-badge badge-yellow">Q Mantra {g.get("quotazione_attuale_mantra")}</span>
+        <span class="role-badge badge-red">Fascia: {fascia}</span>
+        <span class="role-badge badge-yellow">Prezzo max: {prezzo}</span>
+    </div>
+    """, unsafe_allow_html=True)
+
+def player_card(g):
+    st.markdown(f"""
+    <div class="player-card">
+        <div class="player-card-name">{g.get("nome")}</div>
+        <div class="player-card-sub">🏟️ {g.get("squadra")} · 🎯 {g.get("ruoli_mantra")}</div>
+        <div class="mini-stat-grid">
+            <div class="mini-stat"><div class="mini-label">MV</div><div class="mini-value">{g.get("media_voto")}</div></div>
+            <div class="mini-stat"><div class="mini-label">FM</div><div class="mini-value">{g.get("fanta_media")}</div></div>
+            <div class="mini-stat"><div class="mini-label">GOL</div><div class="mini-value">{g.get("gol_fatti")}</div></div>
+            <div class="mini-stat"><div class="mini-label">ASSIST</div><div class="mini-value">{g.get("assist")}</div></div>
+        </div>
     </div>
     """, unsafe_allow_html=True)
 
 # =========================
-# SESSIONE
+# SESSION
 # =========================
 if "lega" not in st.session_state:
     st.session_state.lega = None
-
 if "partecipante" not in st.session_state:
     st.session_state.partecipante = None
+if "selected_player_id" not in st.session_state:
+    st.session_state.selected_player_id = None
 
 # =========================
-# LOGIN LEGA
+# LOGIN
 # =========================
 st.markdown("""
 <div class="hero-card">
-    <div class="hero-title">🏆 Asta Scanzano</div>
-    <div class="hero-subtitle">La tua asta. La tua lega. Il tuo FantaMantra.</div>
+    <div class="hero-title">🏆 FantaMantra Asta Live</div>
+    <div class="hero-subtitle">Asta, database, scouting e pagine giocatore in stile FantaLab.</div>
 </div>
 """, unsafe_allow_html=True)
 
 if st.session_state.lega is None:
     st.subheader("Entra nella lega")
     codice = st.text_input("Codice invito lega", value="Scanzano").strip()
-
-    if st.button("Entra"):
+    if st.button("Entra", type="primary"):
         lega = get_lega_by_codice(codice)
         if lega:
             st.session_state.lega = lega
             st.rerun()
         else:
             st.error("Codice lega non trovato.")
-
     st.stop()
 
 lega = st.session_state.lega
+sidebar_brand(lega)
 
-render_sidebar_brand(lega)
-
-# =========================
-# SCELTA PARTECIPANTE
-# =========================
 partecipanti = get_partecipanti(lega["id"])
 
 if st.session_state.partecipante is None:
     st.subheader("Scegli la tua squadra")
-
     labels = [f"{p['nome_squadra']} - {p['nome_presidente']}" for p in partecipanti]
     selected = st.selectbox("Squadra", labels)
-
-    if st.button("Conferma squadra"):
+    if st.button("Conferma squadra", type="primary"):
         idx = labels.index(selected)
         st.session_state.partecipante = partecipanti[idx]
         st.rerun()
-
     st.stop()
 
 partecipante = st.session_state.partecipante
-
 st.sidebar.info(f"Sei: {partecipante['nome_squadra']}")
 
 if st.sidebar.button("Cambia squadra"):
     st.session_state.partecipante = None
     st.rerun()
 
-# =========================
-# MENU
-# =========================
 pagina = st.sidebar.radio(
     "Menu",
     [
         "Dashboard",
         "Sala asta",
         "Chiama giocatore",
+        "Database giocatori",
+        "Pagina giocatore",
         "Scouting / Commenti",
         "Partecipanti",
         "Rose",
-        "Database giocatori",
         "Admin / Reset"
     ]
 )
@@ -714,61 +771,44 @@ if pagina == "Dashboard":
     ultimo_nome = ultimi[0].get("nome_giocatore") if ultimi else "Nessuno"
 
     c1, c2, c3, c4, c5 = st.columns(5)
-    with c1:
-        render_stat_card("Partecipanti", f"{len(partecipanti_now)}/10", "iscritti", "👥", "#22c55e")
-    with c2:
-        render_stat_card("Budget iniziale", "600", "crediti", "💼", "#38bdf8")
-    with c3:
-        render_stat_card("Giocatori assegnati", f"{assegnati}/663", "totale", "👕", "#a855f7")
-    with c4:
-        render_stat_card("Crediti residui", f"{int(crediti_totali)}", "totali", "🪙", "#facc15")
-    with c5:
-        render_stat_card("Ultimo acquisto", ultimo_nome, "-", "📈", "#fb7185")
+    with c1: stat_card("Partecipanti", f"{len(partecipanti_now)}/10", "iscritti")
+    with c2: stat_card("Budget iniziale", "600", "crediti")
+    with c3: stat_card("Giocatori assegnati", f"{assegnati}/663", "totale")
+    with c4: stat_card("Crediti residui", f"{int(crediti_totali)}", "totali")
+    with c5: stat_card("Ultimo acquisto", ultimo_nome, "-")
 
     st.write("")
-
-    col_left, col_right = st.columns([1.45, 1])
+    col_left, col_right = st.columns([1.4, 1])
 
     with col_left:
         asta = get_asta_attiva(lega["id"])
         if asta:
-            giocatore = get_giocatore(asta["id_giocatore"])
+            g = get_giocatore(asta["id_giocatore"])
             migliore_nome = "Nessuna offerta"
             if asta.get("partecipante_corrente"):
                 migliore = [p for p in partecipanti_now if p["id"] == asta["partecipante_corrente"]]
                 if migliore:
                     migliore_nome = migliore[0]["nome_squadra"]
-
+            player_header(g)
             st.markdown(f"""
-            <div class="auction-grid-card">
-                <div class="section-label">● Giocatore in asta</div>
-                <div class="player-name-big">{giocatore.get("nome")}</div>
-                <div class="player-meta">🏟️ {giocatore.get("squadra")} · 🎯 {giocatore.get("ruoli_mantra")}</div>
-                <span class="pill">MV {giocatore.get("media_voto")}</span>
-                <span class="pill">FM {giocatore.get("fanta_media")}</span>
-                <span class="pill pill-blue">Gol {giocatore.get("gol_fatti")}</span>
-                <span class="pill pill-blue">Assist {giocatore.get("assist")}</span>
-                <span class="pill pill-yellow">Quotazione {giocatore.get("quotazione_attuale")}</span>
-                <br><br>
-                <div class="price-panel">
-                    <div class="price-label">Prezzo attuale</div>
-                    <div class="price-number">{asta.get("prezzo_corrente")}</div>
-                    <div class="price-credit">crediti</div>
-                    <div class="best-bidder">Miglior offerente: {migliore_nome}</div>
-                </div>
+            <div class="price-panel">
+                <div class="price-label">Prezzo attuale</div>
+                <div class="price-number">{asta.get("prezzo_corrente")}</div>
+                <div class="price-credit">crediti</div>
+                <div class="player-sub">Miglior offerente: <b>{migliore_nome}</b></div>
             </div>
             """, unsafe_allow_html=True)
         else:
             st.markdown("""
-            <div class="auction-grid-card">
-                <div class="section-label">● Giocatore in asta</div>
-                <div class="player-name-big">Nessun giocatore chiamato</div>
-                <div class="player-meta">Vai su “Chiama giocatore” per iniziare una nuova asta.</div>
+            <div class="card">
+                <div class="section-label">Giocatore in asta</div>
+                <div class="player-title">Nessun giocatore chiamato</div>
+                <div class="player-sub">Vai su “Chiama giocatore” per iniziare.</div>
             </div>
             """, unsafe_allow_html=True)
 
     with col_right:
-        st.markdown('<div class="auction-grid-card"><div class="section-label">Classifica crediti residui</div>', unsafe_allow_html=True)
+        st.markdown('<div class="card"><div class="section-label">Classifica crediti residui</div>', unsafe_allow_html=True)
         for i, p in enumerate(sorted(partecipanti_now, key=lambda x: safe_num(x.get("crediti_residui")), reverse=True), start=1):
             cred = int(safe_num(p.get("crediti_residui")))
             width = max(8, min(100, cred / 600 * 100))
@@ -782,14 +822,11 @@ if pagina == "Dashboard":
                 <div class="rank-credit">{cred}</div>
             </div>
             """, unsafe_allow_html=True)
-        st.markdown('</div>', unsafe_allow_html=True)
+        st.markdown("</div>", unsafe_allow_html=True)
 
-    st.write("")
-
-    col_a, col_b = st.columns([1, 1])
-
+    col_a, col_b = st.columns(2)
     with col_a:
-        st.markdown('<div class="auction-grid-card"><div class="section-label">Ultimi acquisti</div>', unsafe_allow_html=True)
+        st.markdown('<div class="card"><div class="section-label">Ultimi acquisti</div>', unsafe_allow_html=True)
         if ultimi:
             for u in ultimi:
                 p = u.get("partecipanti") or {}
@@ -803,11 +840,11 @@ if pagina == "Dashboard":
                 </div>
                 """, unsafe_allow_html=True)
         else:
-            st.caption("Nessun acquisto ancora registrato.")
-        st.markdown('</div>', unsafe_allow_html=True)
+            st.caption("Nessun acquisto.")
+        st.markdown("</div>", unsafe_allow_html=True)
 
     with col_b:
-        st.markdown('<div class="auction-grid-card"><div class="section-label">Scouting rapido</div>', unsafe_allow_html=True)
+        st.markdown('<div class="card"><div class="section-label">Scouting rapido</div>', unsafe_allow_html=True)
         commenti = get_tutti_commenti(lega["id"])[:4]
         if commenti:
             for c in commenti:
@@ -818,89 +855,56 @@ if pagina == "Dashboard":
                     <div class="scout-name">{g.get("nome")}</div>
                     <div class="scout-sub">{g.get("squadra")} · {g.get("ruoli_mantra")}</div>
                     <div class="stars">{stars}</div>
-                    <span class="pill">{c.get("fascia")}</span>
-                    <span class="pill pill-yellow">Max {c.get("prezzo_massimo")}</span>
+                    <span class="role-badge">{c.get("fascia")}</span>
+                    <span class="role-badge badge-yellow">Max {c.get("prezzo_massimo")}</span>
                 </div>
                 """, unsafe_allow_html=True)
         else:
             st.caption("Nessun commento scouting salvato.")
-        st.markdown('</div>', unsafe_allow_html=True)
+        st.markdown("</div>", unsafe_allow_html=True)
 
 # =========================
 # SALA ASTA
 # =========================
 elif pagina == "Sala asta":
     st.header("🔥 Sala asta live")
-
     asta = get_asta_attiva(lega["id"])
 
     if not asta:
         st.info("Nessun giocatore attualmente all'asta.")
     else:
-        giocatore = get_giocatore(asta["id_giocatore"])
-
-        partecipanti = get_partecipanti(lega["id"])
+        g = get_giocatore(asta["id_giocatore"])
+        partecipanti_now = get_partecipanti(lega["id"])
         nome_migliore = "Nessuna offerta"
         if asta.get("partecipante_corrente"):
-            migliore = [p for p in partecipanti if p["id"] == asta["partecipante_corrente"]]
+            migliore = [p for p in partecipanti_now if p["id"] == asta["partecipante_corrente"]]
             if migliore:
                 nome_migliore = migliore[0]["nome_squadra"]
 
-        col1, col2 = st.columns([2, 1])
-
+        col1, col2 = st.columns([1.6, 1])
         with col1:
-            st.markdown(f"""
-            <div class="auction-grid-card">
-                <div class="section-label">● Giocatore in asta</div>
-                <div class="player-name-big">{giocatore.get('nome')}</div>
-                <div class="player-meta">🏟️ {giocatore.get('squadra')} · 🎯 {giocatore.get('ruoli_mantra')}</div>
-                <span class="pill">MV {giocatore.get('media_voto')}</span>
-                <span class="pill">FM {giocatore.get('fanta_media')}</span>
-                <span class="pill pill-blue">Gol {giocatore.get('gol_fatti')}</span>
-                <span class="pill pill-blue">Assist {giocatore.get('assist')}</span>
-                <span class="pill pill-yellow">Q {giocatore.get('quotazione_attuale')}</span>
-                <span class="pill pill-yellow">Q Mantra {giocatore.get('quotazione_attuale_mantra')}</span>
-            </div>
-            """, unsafe_allow_html=True)
-
+            player_header(g, get_commento_giocatore(lega["id"], g["id_giocatore"]))
         with col2:
             st.markdown(f"""
             <div class="price-panel">
                 <div class="price-label">Prezzo corrente</div>
                 <div class="price-number">{asta["prezzo_corrente"]}</div>
                 <div class="price-credit">crediti</div>
-                <div class="best-bidder">{nome_migliore}</div>
+                <div class="player-sub">Miglior offerente: <b>{nome_migliore}</b></div>
             </div>
             """, unsafe_allow_html=True)
-
-        st.divider()
 
         prezzo_corrente = float(asta["prezzo_corrente"])
         minimo = prezzo_corrente + 1
 
         st.subheader("Rilancia")
-        col_a, col_b, col_c, col_d, col_e = st.columns(5)
-
-        with col_a:
-            if st.button(f"+1 → {prezzo_corrente + 1}"):
-                rilancia(asta, partecipante["id"], prezzo_corrente + 1)
-                st.rerun()
-        with col_b:
-            if st.button(f"+5 → {prezzo_corrente + 5}"):
-                rilancia(asta, partecipante["id"], prezzo_corrente + 5)
-                st.rerun()
-        with col_c:
-            if st.button(f"+10 → {prezzo_corrente + 10}"):
-                rilancia(asta, partecipante["id"], prezzo_corrente + 10)
-                st.rerun()
-        with col_d:
-            if st.button(f"+20 → {prezzo_corrente + 20}"):
-                rilancia(asta, partecipante["id"], prezzo_corrente + 20)
-                st.rerun()
-        with col_e:
-            if st.button(f"+50 → {prezzo_corrente + 50}"):
-                rilancia(asta, partecipante["id"], prezzo_corrente + 50)
-                st.rerun()
+        cols = st.columns(5)
+        increments = [1, 5, 10, 20, 50]
+        for col, inc in zip(cols, increments):
+            with col:
+                if st.button(f"+{inc} → {prezzo_corrente + inc}"):
+                    rilancia(asta, partecipante["id"], prezzo_corrente + inc)
+                    st.rerun()
 
         col_m1, col_m2 = st.columns([2, 1])
         with col_m1:
@@ -911,6 +915,15 @@ elif pagina == "Sala asta":
                 st.rerun()
 
         st.divider()
+        c1, c2 = st.columns(2)
+        with c1:
+            if st.button("✅ Assegna al miglior offerente", type="primary"):
+                assegna_giocatore(asta)
+                st.rerun()
+        with c2:
+            if st.button("❌ Annulla asta"):
+                annulla_asta(asta)
+                st.rerun()
 
         st.subheader("Ultimi rilanci")
         rilanci = get_rilanci(asta["id"])
@@ -928,52 +941,25 @@ elif pagina == "Sala asta":
         else:
             st.info("Ancora nessun rilancio.")
 
-        st.divider()
-
-        st.subheader("Controlli banditore")
-        c1, c2 = st.columns(2)
-
-        with c1:
-            if st.button("✅ Assegna al miglior offerente", type="primary"):
-                assegna_giocatore(asta)
-                st.rerun()
-
-        with c2:
-            if st.button("❌ Annulla asta"):
-                annulla_asta(asta)
-                st.rerun()
-
 # =========================
 # CHIAMA GIOCATORE
 # =========================
 elif pagina == "Chiama giocatore":
     st.header("📣 Chiama un giocatore")
-
     asta = get_asta_attiva(lega["id"])
+
     if asta:
-        st.warning("C'è già un'asta attiva. Chiudila o annullala prima di chiamare un nuovo giocatore.")
+        st.warning("C'è già un'asta attiva. Chiudila o annullala prima.")
     else:
         search = st.text_input("Cerca giocatore per nome")
         giocatori = get_giocatori(search, limit=100)
 
         if giocatori:
-            df = pd.DataFrame(giocatori)
-
-            colonne = [
-                "id_giocatore", "nome", "squadra", "ruoli_mantra",
-                "fanta_media", "quotazione_attuale", "quotazione_attuale_mantra"
-            ]
-            colonne = [c for c in colonne if c in df.columns]
-
-            st.dataframe(df[colonne], use_container_width=True)
-
-            options = [
-                f"{g['id_giocatore']} - {g['nome']} | {g.get('squadra')} | {g.get('ruoli_mantra')}"
-                for g in giocatori
-            ]
-
+            options = [f"{g['id_giocatore']} - {g['nome']} | {g.get('squadra')} | {g.get('ruoli_mantra')}" for g in giocatori]
             scelta = st.selectbox("Seleziona giocatore da chiamare", options)
             id_giocatore = int(scelta.split(" - ")[0])
+            g = get_giocatore(id_giocatore)
+            player_header(g, get_commento_giocatore(lega["id"], id_giocatore))
 
             prezzo_base = st.number_input("Prezzo base", min_value=1.0, value=1.0, step=1.0)
 
@@ -988,68 +974,93 @@ elif pagina == "Chiama giocatore":
             st.info("Nessun giocatore trovato.")
 
 # =========================
-# SCOUTING COMMENTI
+# DATABASE GIOCATORI COLORATO
 # =========================
-elif pagina == "Scouting / Commenti":
-    st.header("🧠 Scouting / Commenti personali")
+elif pagina == "Database giocatori":
+    st.header("📋 Database giocatori")
 
-    st.markdown("""
-    <div class="auction-grid-card">
-        <div class="section-label">Database personale</div>
-        Qui usi le statistiche storiche come base, ma aggiungi il tuo giudizio:
-        fascia, priorità, prezzo massimo e commento personale.
-    </div>
-    """, unsafe_allow_html=True)
+    col_f1, col_f2, col_f3 = st.columns(3)
+    with col_f1:
+        search = st.text_input("Cerca nome")
+    with col_f2:
+        ruolo = st.selectbox("Filtro ruolo Mantra", ["Tutti", "Por", "Dc", "Ds", "Dd", "E", "M", "C", "T", "W", "A", "Pc"])
+    with col_f3:
+        squadra = st.selectbox("Filtro squadra", get_squadre())
 
-    search = st.text_input("Cerca giocatore da commentare")
+    giocatori = get_giocatori_filtrati(search, ruolo, squadra, limit=150)
+
+    if giocatori:
+        st.caption(f"{len(giocatori)} giocatori trovati")
+
+        for i in range(0, len(giocatori), 3):
+            cols = st.columns(3)
+            for col, g in zip(cols, giocatori[i:i+3]):
+                with col:
+                    player_card(g)
+                    if st.button(f"Apri scheda", key=f"open_{g['id_giocatore']}"):
+                        st.session_state.selected_player_id = g["id_giocatore"]
+                        st.rerun()
+    else:
+        st.info("Nessun giocatore trovato.")
+
+# =========================
+# PAGINA GIOCATORE
+# =========================
+elif pagina == "Pagina giocatore":
+    st.header("🧬 Pagina giocatore")
+
+    search = st.text_input("Cerca giocatore")
     giocatori = get_giocatori(search, limit=100)
 
     if giocatori:
-        options = [
-            f"{g['id_giocatore']} - {g['nome']} | {g.get('squadra')} | {g.get('ruoli_mantra')}"
-            for g in giocatori
-        ]
-        scelta = st.selectbox("Seleziona giocatore", options)
+        options = [f"{g['id_giocatore']} - {g['nome']} | {g.get('squadra')} | {g.get('ruoli_mantra')}" for g in giocatori]
+        default_index = 0
+        if st.session_state.selected_player_id:
+            for idx, label in enumerate(options):
+                if label.startswith(str(st.session_state.selected_player_id) + " - "):
+                    default_index = idx
+                    break
+
+        scelta = st.selectbox("Seleziona giocatore", options, index=default_index)
         id_giocatore = int(scelta.split(" - ")[0])
-        giocatore = get_giocatore(id_giocatore)
+        st.session_state.selected_player_id = id_giocatore
+        g = get_giocatore(id_giocatore)
         commento_old = get_commento_giocatore(lega["id"], id_giocatore)
 
-        col1, col2 = st.columns([1.2, 1])
+        player_header(g, commento_old)
 
-        with col1:
-            st.markdown(f"""
-            <div class="auction-grid-card">
-                <div class="player-name-big">{giocatore.get('nome')}</div>
-                <div class="player-meta">🏟️ {giocatore.get('squadra')} · 🎯 {giocatore.get('ruoli_mantra')}</div>
-                <span class="pill">FM {giocatore.get('fanta_media')}</span>
-                <span class="pill">MV {giocatore.get('media_voto')}</span>
-                <span class="pill pill-blue">Gol {giocatore.get('gol_fatti')}</span>
-                <span class="pill pill-blue">Assist {giocatore.get('assist')}</span>
-                <span class="pill pill-yellow">Q {giocatore.get('quotazione_attuale')}</span>
-                <span class="pill pill-yellow">Q Mantra {giocatore.get('quotazione_attuale_mantra')}</span>
-            </div>
-            """, unsafe_allow_html=True)
+        col1, col2, col3, col4 = st.columns(4)
+        with col1: stat_card("Partite a voto", g.get("partite_a_voto"), "presenze utili")
+        with col2: stat_card("Media voto", g.get("media_voto"), "rendimento puro")
+        with col3: stat_card("Fanta media", g.get("fanta_media"), "bonus/malus")
+        with col4: stat_card("Quotazione", g.get("quotazione_attuale"), "attuale")
 
-            dati_visibili = {
-                "Partite a voto": giocatore.get("partite_a_voto"),
-                "Media voto": giocatore.get("media_voto"),
-                "Fanta media": giocatore.get("fanta_media"),
-                "Gol fatti": giocatore.get("gol_fatti"),
-                "Gol subiti": giocatore.get("gol_subiti"),
-                "Rigori parati": giocatore.get("rigori_parati"),
-                "Rigori calciati": giocatore.get("rigori_calciati"),
-                "Rigori segnati": giocatore.get("rigori_segnati"),
-                "Rigori sbagliati": giocatore.get("rigori_sbagliati"),
-                "Assist": giocatore.get("assist"),
-                "Ammonizioni": giocatore.get("ammonizioni"),
-                "Espulsioni": giocatore.get("espulsioni"),
-                "Autogol": giocatore.get("autogol"),
+        col_a, col_b = st.columns([1.2, 1])
+
+        with col_a:
+            st.markdown('<div class="card"><div class="section-label">Statistiche complete</div>', unsafe_allow_html=True)
+            stats = {
+                "Gol fatti": g.get("gol_fatti"),
+                "Gol subiti": g.get("gol_subiti"),
+                "Rigori parati": g.get("rigori_parati"),
+                "Rigori calciati": g.get("rigori_calciati"),
+                "Rigori segnati": g.get("rigori_segnati"),
+                "Rigori sbagliati": g.get("rigori_sbagliati"),
+                "Assist": g.get("assist"),
+                "Ammonizioni": g.get("ammonizioni"),
+                "Espulsioni": g.get("espulsioni"),
+                "Autogol": g.get("autogol"),
+                "Quotazione iniziale": g.get("quotazione_iniziale"),
+                "Differenza quotazione": g.get("differenza_quotazione"),
+                "Quotazione attuale Mantra": g.get("quotazione_attuale_mantra"),
+                "Quotazione iniziale Mantra": g.get("quotazione_iniziale_mantra"),
+                "Differenza Mantra": g.get("differenza_quotazione_mantra"),
             }
+            st.dataframe(pd.DataFrame([stats]).T.rename(columns={0: "Valore"}), use_container_width=True)
+            st.markdown("</div>", unsafe_allow_html=True)
 
-            st.dataframe(pd.DataFrame([dati_visibili]).T.rename(columns={0: "Valore"}), use_container_width=True)
-
-        with col2:
-            st.subheader("Il tuo giudizio")
+        with col_b:
+            st.markdown('<div class="card card-purple"><div class="section-label">Scouting personale</div>', unsafe_allow_html=True)
 
             fascia_default = commento_old.get("fascia") if commento_old else "Da valutare"
             priorita_default = commento_old.get("priorita") if commento_old else "Media"
@@ -1057,27 +1068,18 @@ elif pagina == "Scouting / Commenti":
             fasce = ["Top", "Semi-top", "Titolare utile", "Scommessa", "Riserva", "Da evitare", "Da valutare"]
             priorita_opzioni = ["Altissima", "Alta", "Media", "Bassa", "No"]
 
-            fascia = st.selectbox(
-                "Fascia",
-                fasce,
-                index=fasce.index(fascia_default) if fascia_default in fasce else fasce.index("Da valutare")
-            )
-
-            priorita = st.selectbox(
-                "Priorità acquisto",
-                priorita_opzioni,
-                index=priorita_opzioni.index(priorita_default) if priorita_default in priorita_opzioni else priorita_opzioni.index("Media")
-            )
+            fascia = st.selectbox("Fascia", fasce, index=fasce.index(fascia_default) if fascia_default in fasce else fasce.index("Da valutare"))
+            priorita = st.selectbox("Priorità", priorita_opzioni, index=priorita_opzioni.index(priorita_default) if priorita_default in priorita_opzioni else priorita_opzioni.index("Media"))
 
             prezzo_massimo = st.number_input(
-                "Prezzo massimo che pagheresti",
+                "Prezzo massimo",
                 min_value=0.0,
                 value=float(commento_old.get("prezzo_massimo") or 0) if commento_old else 0.0,
                 step=1.0
             )
 
             voto_personale = st.number_input(
-                "Voto personale scouting",
+                "Voto scouting",
                 min_value=0.0,
                 max_value=10.0,
                 value=float(commento_old.get("voto_personale") or 6) if commento_old else 6.0,
@@ -1085,29 +1087,25 @@ elif pagina == "Scouting / Commenti":
             )
 
             commento = st.text_area(
-                "Commento personale",
+                "Commento",
                 value=commento_old.get("commento") if commento_old else "",
-                height=180,
-                placeholder="Esempio: titolare, buoni bonus, da prendere solo se resta sotto i 20 crediti..."
+                height=170
             )
 
-            if st.button("💾 Salva commento", type="primary"):
-                salva_commento_giocatore(
-                    lega["id"],
-                    id_giocatore,
-                    commento,
-                    fascia,
-                    priorita,
-                    prezzo_massimo,
-                    voto_personale
-                )
-                st.success("Commento salvato.")
+            if st.button("💾 Salva scouting", type="primary"):
+                salva_commento_giocatore(lega["id"], id_giocatore, commento, fascia, priorita, prezzo_massimo, voto_personale)
+                st.success("Scouting salvato.")
                 st.rerun()
 
-    st.divider()
-    st.subheader("📒 Tutti i commenti salvati")
+            st.markdown("</div>", unsafe_allow_html=True)
 
+# =========================
+# SCOUTING LISTA
+# =========================
+elif pagina == "Scouting / Commenti":
+    st.header("🧠 Scouting / Commenti")
     commenti = get_tutti_commenti(lega["id"])
+
     if commenti:
         rows = []
         for c in commenti:
@@ -1124,103 +1122,61 @@ elif pagina == "Scouting / Commenti":
                 "voto_personale": c.get("voto_personale"),
                 "commento": c.get("commento")
             })
-        df_commenti = pd.DataFrame(rows)
-        st.dataframe(df_commenti, use_container_width=True)
+        st.dataframe(pd.DataFrame(rows), use_container_width=True)
     else:
-        st.info("Ancora nessun commento salvato.")
+        st.info("Ancora nessun commento salvato. Vai su Pagina giocatore per crearli.")
 
 # =========================
 # PARTECIPANTI
 # =========================
 elif pagina == "Partecipanti":
-    st.header("👥 Partecipanti e crediti")
-    partecipanti = get_partecipanti(lega["id"])
-    st.dataframe(pd.DataFrame(partecipanti), use_container_width=True)
+    st.header("👥 Partecipanti")
+    st.dataframe(pd.DataFrame(get_partecipanti(lega["id"])), use_container_width=True)
 
 # =========================
 # ROSE
 # =========================
 elif pagina == "Rose":
     st.header("🌹 Rose")
-
     rosa = get_rosa(lega["id"])
-    partecipanti = get_partecipanti(lega["id"])
+    partecipanti_now = get_partecipanti(lega["id"])
 
     if not rosa:
         st.info("Ancora nessun giocatore acquistato.")
     else:
         df_rosa = pd.DataFrame(rosa)
-
-        for p in partecipanti:
-            st.subheader(f"{p['nome_squadra']} - crediti: {p['crediti_residui']}")
+        for p in partecipanti_now:
+            st.markdown(f"""
+            <div class="card">
+                <div class="section-label">{p['nome_squadra']}</div>
+                <div class="player-sub">Crediti residui: <b>{p['crediti_residui']}</b></div>
+            </div>
+            """, unsafe_allow_html=True)
             sub = df_rosa[df_rosa["partecipante_id"] == p["id"]]
             if sub.empty:
                 st.caption("Nessun acquisto.")
             else:
-                cols = ["nome_giocatore", "squadra_reale", "ruoli_mantra", "prezzo_acquisto"]
-                st.dataframe(sub[cols], use_container_width=True)
-
-# =========================
-# DATABASE GIOCATORI
-# =========================
-elif pagina == "Database giocatori":
-    st.header("📋 Database giocatori")
-
-    search = st.text_input("Cerca nome")
-    giocatori = get_giocatori(search, limit=300)
-
-    if giocatori:
-        df = pd.DataFrame(giocatori)
-        st.dataframe(df, use_container_width=True)
-    else:
-        st.info("Nessun giocatore trovato.")
+                st.dataframe(sub[["nome_giocatore", "squadra_reale", "ruoli_mantra", "prezzo_acquisto"]], use_container_width=True)
 
 # =========================
 # ADMIN RESET
 # =========================
 elif pagina == "Admin / Reset":
-    st.header("🧨 Admin / Reset prove")
-
+    st.header("🧨 Admin / Reset")
     st.markdown("""
-    <div class="danger-box">
-        <b>Attenzione:</b> questa pagina serve per azzerare le prove dell'asta.
-        Il reset cancella rose, rilanci, aste attive e riporta i crediti dei partecipanti al budget scelto.
-        Il database dei giocatori NON viene cancellato.
+    <div class="card card-purple">
+        <div class="section-label">Reset prove</div>
+        Cancella rose, rilanci, aste attive e offerte. Non cancella giocatori, statistiche, partecipanti e scouting.
     </div>
     """, unsafe_allow_html=True)
 
-    st.write("")
-
-    col1, col2, col3 = st.columns(3)
-    with col1:
-        budget_reset = st.number_input("Budget a cui riportare tutti", min_value=1.0, value=600.0, step=1.0)
-    with col2:
-        st.metric("Partecipanti", len(get_partecipanti(lega["id"])))
-    with col3:
-        st.metric("Lega", lega["codice_invito"])
-
-    conferma = st.text_input("Per confermare scrivi RESET in maiuscolo")
+    budget_reset = st.number_input("Budget a cui riportare tutti", min_value=1.0, value=600.0, step=1.0)
+    conferma = st.text_input("Per confermare scrivi RESET")
 
     if conferma == "RESET":
-        st.warning("Reset abilitato. Premi il pulsante qui sotto solo se sei sicuro.")
         if st.button("🧨 RESETTA TUTTA L'ASTA", type="primary"):
             reset_lega_totale(lega["id"], budget_reset)
-            st.success("Reset completato: rose, rilanci e aste cancellati. Crediti ripristinati.")
+            st.success("Reset completato.")
             st.rerun()
     else:
-        st.info("Scrivi RESET per sbloccare il pulsante di reset.")
-
-    st.divider()
-    st.subheader("Controllo rapido dati")
-
-    c1, c2, c3 = st.columns(3)
-    with c1:
-        rose_count = len(get_rosa(lega["id"]))
-        st.metric("Giocatori assegnati", rose_count)
-    with c2:
-        asta_attiva = get_asta_attiva(lega["id"])
-        st.metric("Asta attiva", "Sì" if asta_attiva else "No")
-    with c3:
-        partecipanti_now = get_partecipanti(lega["id"])
-        crediti_tot = sum(float(p["crediti_residui"]) for p in partecipanti_now)
-        st.metric("Crediti totali residui", int(crediti_tot))
+        st.info("Scrivi RESET per sbloccare il pulsante.")

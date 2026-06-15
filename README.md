@@ -1,19 +1,9 @@
-# FantaMantra Asta Live - V4 Premium UI
+# FantaMantra Asta Live - V5 FantaLab Style
 
-Versione premium dell'app asta Fantamantra con:
-
-- Dashboard iniziale
-- UI dark/neon
-- Card giocatore in asta
-- Classifica crediti residui
-- Ultimi acquisti
-- Scouting rapido
-- Sala asta migliorata
-- Reset prove
-- Commenti scouting
-
-## Deploy
-
-Carica `app.py` su GitHub sostituendo quello vecchio.
-
-Streamlit Cloud aggiornerà automaticamente l'app.
+Nuova versione:
+- fix grafico selectbox
+- database giocatori colorato
+- pagina dettaglio giocatore tipo FantaLab
+- scouting integrato nella pagina giocatore
+- dashboard premium
+- sala asta migliorata
