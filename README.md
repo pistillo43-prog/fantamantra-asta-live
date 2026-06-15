@@ -1,53 +1,19 @@
+# FantaMantra Asta Live - V4 Premium UI
 
-# FantaMantra Asta Live
+Versione premium dell'app asta Fantamantra con:
 
-App Streamlit collegata a Supabase per asta Fantacalcio Mantra live.
+- Dashboard iniziale
+- UI dark/neon
+- Card giocatore in asta
+- Classifica crediti residui
+- Ultimi acquisti
+- Scouting rapido
+- Sala asta migliorata
+- Reset prove
+- Commenti scouting
 
-## Avvio locale
+## Deploy
 
-Dentro la cartella del progetto:
+Carica `app.py` su GitHub sostituendo quello vecchio.
 
-```bash
-pip install -r requirements.txt
-python -m streamlit run app.py
-```
-
-Poi nella sidebar inserisci:
-
-- Supabase URL
-- Supabase anon key
-
-Li trovi in Supabase:
-
-Project Settings → API
-
-## Tabelle richieste
-
-- leghe
-- partecipanti
-- giocatori
-- rose
-- offerte
-- asta_live
-- rilanci
-
-## Nota
-
-Per la prima versione tutti vedono i controlli da banditore.
-Nella versione successiva aggiungeremo ruolo admin e permessi.
-
-
-## Novità v2
-
-- Pagina Admin / Reset
-- Reset rose, rilanci e aste
-- Ripristino crediti a 600
-- Interfaccia più curata con card e stile dark
-
-
-## Novità v3
-
-- Pagina Scouting / Commenti
-- Commenti personali per ogni giocatore
-- Fascia, priorità, prezzo massimo e voto scouting
-- Tabella Supabase `commenti_giocatori`
+Streamlit Cloud aggiornerà automaticamente l'app.
