@@ -1,9 +1,14 @@
-# FantaMantra Asta Live - V5 FantaLab Style
+# FantaMantra Asta Live - V6 Scheda Giocatore
 
-Nuova versione:
-- fix grafico selectbox
-- database giocatori colorato
-- pagina dettaglio giocatore tipo FantaLab
-- scouting integrato nella pagina giocatore
-- dashboard premium
-- sala asta migliorata
+Questa versione aggiunge una scheda giocatore stile FantaLab/Fantacalcio:
+
+- profilo laterale del giocatore
+- ruolo, squadra, stelle, quotazione
+- heatmap sintetica per ruolo
+- tabella statistiche divisa in Fantacalcio / Generali / Ruolo / Malus
+- grafico sintetico FMV/MV/Bonus/Quotazione
+- presenze visualizzate a pallini
+- news/note giocatore
+- scouting personale integrato
+
+Carica `app.py` su GitHub sostituendo quello precedente.

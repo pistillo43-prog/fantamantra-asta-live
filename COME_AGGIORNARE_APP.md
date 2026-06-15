@@ -1,10 +1,14 @@
-# Come aggiornare l'app
+# Come aggiornare alla V6
 
-1. Vai su GitHub.
-2. Sostituisci `app.py` con questo nuovo file.
-3. Controlla che `requirements.txt` contenga:
-   streamlit
-   pandas
-   supabase
-4. Fai Commit changes.
-5. Streamlit Cloud aggiornerà automaticamente l'app.
+1. Scarica questo ZIP.
+2. Estrai il file.
+3. Vai su GitHub nel repository:
+   https://github.com/pistillo43-prog/fantamantra-asta-live
+4. Apri `app.py`.
+5. Clicca sulla matita.
+6. Cancella tutto il vecchio contenuto.
+7. Incolla il contenuto del nuovo `app.py`.
+8. Fai Commit changes.
+9. Streamlit Cloud aggiornerà l'app automaticamente.
+
+Non toccare i Secrets su Streamlit.
